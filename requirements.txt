@@ -1,0 +1,12 @@
+streamlit
+pandas
+numpy
+matplotlib
+seaborn
+altair
+vega_datasets
+scikit-learn
+imbalanced-learn
+vegafusion
+streamlit_echarts
+
