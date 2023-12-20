@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from streamlit_echarts import st_echarts
-from streamlit_extras.dataframe_explorer import dataframe_explorer 
+
 
 # Extras -> https://arnaudmiribel.github.io/streamlit-extras/extras/
 
