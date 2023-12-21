@@ -44,10 +44,10 @@ potentially better options, in line with findings from other Kaggle notebooks.
 tab1, tab2  = st.tabs(["Random Forest Classifier Confusion Matrix","Random Forest Classifier ROC Curve"])
 
 with tab1:
-    st.image("/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/Random Forest Classifier Confusion Matrix.png")
+    st.image("data/Random Forest Classifier Confusion Matrix.png")
 
 with tab2: 
-    st.image("/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/Random Forest Classifier ROC Curve.png")
+    st.image("data/Random Forest Classifier ROC Curve.png")
     
 
 st.write("""We wanted to explore another approach to the problem and since we had a very large
@@ -59,7 +59,7 @@ decided that a somewhat complex architecture would be needed. The final version 
 input layer with 10 nodes, 4 hidden layers (nodes: 20 150 20 3), one dropout layer after the
 biggest hidden layer, and an output layer with one node.""")
 
-st.image("/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/Neural_Network_Arcitecture.png")
+st.image("data/Neural_Network_Arcitecture.png")
 tab1, tab2  = st.tabs(["Neural Network Confusion Matrix","Neural Network ROC Curve"])
 
 st.write("""
@@ -79,36 +79,36 @@ performance.
 """)
 
 with tab1:
-    st.image("/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/Neural_Network_Confusion_Matrix.png")
+    st.image("data/Neural_Network_Confusion_Matrix.png")
 
 with tab2: 
-    st.image("/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/Neural_Network_ROC_Curve.png")
+    st.image("data/Neural_Network_ROC_Curve.png")
     
 
     
 # Load the model
-st.markdown("---")
-st.write("Hello World")
-df = get_data()
-st.write(df.head())
-st.write(tf.__version__)
+#st.markdown("---")
+#st.write("Hello World")
+#df = get_data()
+#st.write(df.head())
+#st.write(tf.__version__)
 
 
 
-loaded_model = load_model('/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/final.keras')
-loaded_scaler = pickle.load(open('/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/finalScaler.pkl','rb'))
+#loaded_model = load_model('/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/final.keras')
+#loaded_scaler = pickle.load(open('/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/finalScaler.pkl','rb'))
 
 
 
-df = pd.read_csv("/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/baby_fraud.csv")
-df["per_change"] = ((df["newbalanceOrig"] - df["oldbalanceOrg"])/(df["oldbalanceOrg"]))
-df["per_change"] = pd.Series(np.where(df["oldbalanceOrg"] == 0.0,0,df["per_change"]))
-df.drop(columns=['isFlaggedFraud','oldbalanceOrg', 'oldbalanceDest','nameOrig','nameDest'], axis=1, inplace=True)
-df = pd.get_dummies(df, columns=['type'], prefix=['type'])
-df = df.sample(n=600000, random_state=42)
-X = df.drop('isFraud', axis=1)
-y = df['isFraud']
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
+#df = pd.read_csv("/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/baby_fraud.csv")
+#df["per_change"] = ((df["newbalanceOrig"] - df["oldbalanceOrg"])/(df["oldbalanceOrg"]))
+#df["per_change"] = pd.Series(np.where(df["oldbalanceOrg"] == 0.0,0,df["per_change"]))
+#df.drop(columns=['isFlaggedFraud','oldbalanceOrg', 'oldbalanceDest','nameOrig','nameDest'], axis=1, inplace=True)
+#df = pd.get_dummies(df, columns=['type'], prefix=['type'])
+#df = df.sample(n=600000, random_state=42)
+#X = df.drop('isFraud', axis=1)
+#y = df['isFraud']
+#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
 
 
 
