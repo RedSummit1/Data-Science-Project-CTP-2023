@@ -25,11 +25,11 @@ if __name__ == "__main__":
     col1,col2 = st.columns(2)
     with col1:
         st.header("Total Fraud Loss")
-        st.image("data/Images/Total_Fraud_Loss.png")
+        st.image("data/Total_Fraud_Loss.png")
 
     with col2:
         st.header("Change in Fraud ")
-        st.image("data/Images/Total_Fraud_Loss_Change.png")
+        st.image("data/Total_Fraud_Loss_Change.png")
 
     st.markdown("""
         <br>
