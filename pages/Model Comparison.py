@@ -33,7 +33,7 @@ From here, we decided to run a model comparison between various classification m
 were able to do this using a library called Pycaret.
 """)
 
-st.image("/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/Pycaretimage.png")
+st.image("data/Pycaretimage.png")
 
 
 st.write("""
