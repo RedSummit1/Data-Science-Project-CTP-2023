@@ -24,9 +24,9 @@ dataset.''')
 tab1, tab2  = st.tabs(["Logistic Regression Confusion Matrix","Logistic Regression ROC Curve"])
 
 with tab1:
-    st.image("/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/LogisticRegressionConfu.png")    
+    st.image("data/LogisticRegressionConfu.png")    
 with tab2:
-    st.image("/home/jonathan/Documents/Obsidian_Vaults/Cuny Tech Prep/Authentic Classes/Offical_Class/Code/streamlit/data/LogRegROC.png")    
+    st.image("data/LogRegROC.png")    
 
 st.write(""" 
 From here, we decided to run a model comparison between various classification models. We
