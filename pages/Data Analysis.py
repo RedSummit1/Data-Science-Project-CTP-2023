@@ -179,114 +179,114 @@ with tab1:
        f = get_fig()
        st.pyplot(f.get_figure())
 
-#    with tab4: 
-#        #hours = [F % 24 for F in Fraud.hours.to_list()].sort()
-#        typeofTansaction= ["notFraud","isFraud"]
-#        timeofFraud = Fraud[["isFraud","hours"]]
-#        timeofFraud["hours"] = timeofFraud.hours.apply(func=lambda x: (x%24))
-#        fraudTrans = timeofFraud[timeofFraud ["isFraud"] == 1]
-#        nfraudTrans = timeofFraud[timeofFraud["isFraud"] != 1]
-#        fraudTrans = fraudTrans.hours.value_counts().sort_index()
-#        nfraudTrans = nfraudTrans.hours.value_counts().sort_index()
-#        
-#        nfraudTranspercent = fraudTrans.apply(func=lambda x: x/8213).rename("notFraud")
-#        fraudTranspercent = nfraudTrans.apply(func=lambda x: x/6354407).rename("Fraud")
-#        test = pd.DataFrame([nfraudTranspercent,fraudTranspercent]).T
-#        #st.write(test)
-#        hours = test.index.to_list()
-#        #st.write(pd.concat([nfraudTranspercent,fraudTranspercent]))
-#        tests = pd.concat([nfraudTranspercent,fraudTranspercent]).T
-#        #st.write(test.values)
-#        #[y,x,z[y]]
-#        data = [[x,y,round(z[y] * 10000)/10000] for x,z in zip(range(24),test.values) for y in range(2)] 
-#        #st.write(data)
-#        #data = [[d[1], d[0], d[2] if d[2] != 0 else "-"] for d in data]
-#
-#        option = {
-#            "tooltip": {"position": "top"},
-#            "grid": {"height": "50%", "top": "10%"},
-#            "xAxis": {"type": "category", "data": hours, "splitArea": {"show": True}},
-#            "yAxis": {"type": "category", "data": typeofTansaction, "splitArea": {"show": True}},
-#            "visualMap": {
-#                "min": 0,
-#                "max": 1,
-#                "calculable": True,
-#                "orient": "horizontal",
-#                "left": "center",
-#                "bottom": "15%",
-#            },
-#            "series": [
-#                {
-#                    "name": "Fraudulent Transaction",
-#                    "type": "heatmap",
-#                    "data": data,
-#                    "label": {"show": False},
-#                    "emphasis": {
-#                        "itemStyle": {"shadowBlur": 10, "shadowColor": "rgba(0, 0, 0, 0.5)"}
-#                    },
-#                }
-#            ],
-#        }
-#        st_echarts(option,height="400px")
-#        with st.expander("Explanation"):
-#            st.markdown("""
-#                ###### This heatmap uses the provided hours feature to visualize the distribution of transactions within a 24 hour period
-#                ###### It can be seen that a majority of the fraudulent transactions occur between the 10th to 20th hour 
-#                """)
-#    
-#    with tab5:
-#        option2 = {
-#            "title": [
-#                {"text": "Distribution of Fraud and nonFraud transactions", "left": "center"},
-#                {
-#                    "borderColor": "#999",
-#                    "borderWidth": 1,
-#                    "textStyle": {"fontWeight": "normal", "fontSize": 14, "lineHeight": 20},
-#                    "left": "10%",
-#                    "top": "90%",
-#                },
-#            ],
-#            "dataset": [
-#                {
-#                    "source": [
-#                         Fraud[(Fraud["isFraud"] != 1) & (Fraud["per_change"] < 0.5)]["per_change"].to_list() , Fraud[(Fraud["isFraud"] == 1) & (Fraud["per_change"] < 0.5) & (Fraud["per_change"] > -0.99)]["per_change"].to_list()
-#                    ],
-#                },
-#                {
-#                    "transform": {
-#                        "type": "boxplot",
-#                        "config": {"itemNameFormatter": "Fraud {value}"},
-#                    }
-#                },
-#                {"fromDatasetIndex": 1, "fromTransformResult": 1},
-#            ],
-#            "tooltip": {"trigger": "item", "axisPointer": {"type": "shadow"}},
-#            "grid": {"left": "10%", "right": "10%", "bottom": "15%"},
-#            "xAxis": {
-#                "type": "category",
-#                "boundaryGap": True,
-#                "nameGap": 30,
-#                "splitArea": {"show": False},
-#                "splitLine": {"show": False},
-#            },
-#            "yAxis": {
-#                "type": "value",
-#                "splitArea": {"show": True},
-#            },
-#            "series": [
-#                {"name": "boxplot", "type": "boxplot", "datasetIndex": 1},
-#                {"name": "outlier", "type": "scatter", "datasetIndex": 2},
-#            ],
-#        }
-#        st_echarts(option2, height="500px")
-#        with st.expander("Explanation"):
-#            st.markdown("""
-#                ###### The box plot shows the distribution of values for Fraudulent and NonFraudulent values
-#                ###### On the left labeled \"Fraud 0\", shows the distribution of nonFraudulent transactions
-#                ###### One the right labled \"Fraud 1\",shows the distribution of Fraudulent transactions*
-#                ###### * Note that values of -1 were removed to highlight other fraudulent transactions
-#                """)
-#
+    with tab4: 
+        #hours = [F % 24 for F in Fraud.hours.to_list()].sort()
+        typeofTansaction= ["notFraud","isFraud"]
+        timeofFraud = Fraud[["isFraud","hours"]]
+        timeofFraud["hours"] = timeofFraud.hours.apply(func=lambda x: (x%24))
+        fraudTrans = timeofFraud[timeofFraud ["isFraud"] == 1]
+        nfraudTrans = timeofFraud[timeofFraud["isFraud"] != 1]
+        fraudTrans = fraudTrans.hours.value_counts().sort_index()
+        nfraudTrans = nfraudTrans.hours.value_counts().sort_index()
+        
+        nfraudTranspercent = fraudTrans.apply(func=lambda x: x/8213).rename("notFraud")
+        fraudTranspercent = nfraudTrans.apply(func=lambda x: x/6354407).rename("Fraud")
+        test = pd.DataFrame([nfraudTranspercent,fraudTranspercent]).T
+        #st.write(test)
+        hours = test.index.to_list()
+        #st.write(pd.concat([nfraudTranspercent,fraudTranspercent]))
+        tests = pd.concat([nfraudTranspercent,fraudTranspercent]).T
+        #st.write(test.values)
+        #[y,x,z[y]]
+        data = [[x,y,round(z[y] * 10000)/10000] for x,z in zip(range(24),test.values) for y in range(2)] 
+        #st.write(data)
+        #data = [[d[1], d[0], d[2] if d[2] != 0 else "-"] for d in data]
+
+        option = {
+            "tooltip": {"position": "top"},
+            "grid": {"height": "50%", "top": "10%"},
+            "xAxis": {"type": "category", "data": hours, "splitArea": {"show": True}},
+            "yAxis": {"type": "category", "data": typeofTansaction, "splitArea": {"show": True}},
+            "visualMap": {
+                "min": 0,
+                "max": 1,
+                "calculable": True,
+                "orient": "horizontal",
+                "left": "center",
+                "bottom": "15%",
+            },
+            "series": [
+                {
+                    "name": "Fraudulent Transaction",
+                    "type": "heatmap",
+                    "data": data,
+                    "label": {"show": False},
+                    "emphasis": {
+                        "itemStyle": {"shadowBlur": 10, "shadowColor": "rgba(0, 0, 0, 0.5)"}
+                    },
+                }
+            ],
+        }
+        st_echarts(option,height="400px")
+        with st.expander("Explanation"):
+            st.markdown("""
+                ###### This heatmap uses the provided hours feature to visualize the distribution of transactions within a 24 hour period
+                ###### It can be seen that a majority of the fraudulent transactions occur between the 10th to 20th hour 
+                """)
+    
+    with tab5:
+        option2 = {
+            "title": [
+                {"text": "Distribution of Fraud and nonFraud transactions", "left": "center"},
+                {
+                    "borderColor": "#999",
+                    "borderWidth": 1,
+                    "textStyle": {"fontWeight": "normal", "fontSize": 14, "lineHeight": 20},
+                    "left": "10%",
+                    "top": "90%",
+                },
+            ],
+            "dataset": [
+                {
+                    "source": [
+                         Fraud[(Fraud["isFraud"] != 1) & (Fraud["per_change"] < 0.5)]["per_change"].to_list() , Fraud[(Fraud["isFraud"] == 1) & (Fraud["per_change"] < 0.5) & (Fraud["per_change"] > -0.99)]["per_change"].to_list()
+                    ],
+                },
+                {
+                    "transform": {
+                        "type": "boxplot",
+                        "config": {"itemNameFormatter": "Fraud {value}"},
+                    }
+                },
+                {"fromDatasetIndex": 1, "fromTransformResult": 1},
+            ],
+            "tooltip": {"trigger": "item", "axisPointer": {"type": "shadow"}},
+            "grid": {"left": "10%", "right": "10%", "bottom": "15%"},
+            "xAxis": {
+                "type": "category",
+                "boundaryGap": True,
+                "nameGap": 30,
+                "splitArea": {"show": False},
+                "splitLine": {"show": False},
+            },
+            "yAxis": {
+                "type": "value",
+                "splitArea": {"show": True},
+            },
+            "series": [
+                {"name": "boxplot", "type": "boxplot", "datasetIndex": 1},
+                {"name": "outlier", "type": "scatter", "datasetIndex": 2},
+            ],
+        }
+        st_echarts(option2, height="500px")
+        with st.expander("Explanation"):
+            st.markdown("""
+                ###### The box plot shows the distribution of values for Fraudulent and NonFraudulent values
+                ###### On the left labeled \"Fraud 0\", shows the distribution of nonFraudulent transactions
+                ###### One the right labled \"Fraud 1\",shows the distribution of Fraudulent transactions*
+                ###### * Note that values of -1 were removed to highlight other fraudulent transactions
+                """)
+
 st.subheader("Data Modeling",divider="red")
 st.write("Logistic Regression")
 
